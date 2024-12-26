@@ -1,0 +1,244 @@
+/* General Modal Styling */
+.managementmodal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Gray background */
+  }
+  
+  .managementmodal-content {
+    background-color: #f4f4f4;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    position: relative;
+  }
+  
+  .managementclose {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Form Styling */
+  .form-row {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .conditional-fields {
+    display: none; /* Hidden by default */
+  }
+  
+  /* Visible conditional fields */
+  .conditional-fields.visible {
+    display: block;
+  }
+
+.employee_contacts {
+    padding: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.employee_contacts h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+  
+.contact_list {
+    list-style: none;
+    padding: 0;
+}
+  
+.contact_list li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+  
+.contact_list li strong {
+    color: #333;
+}
+  
+.contact_list li:last-child {
+    border-bottom: none;
+}
+  
+  /* Order Management Start */
+.orders {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  #searchBar {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  /* Orders List */
+  .orders-list {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .orders-header, .order-item {
+    display: flex;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .orders-header {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  .ordercolumn {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .order-number {
+    flex: 1;
+  }
+  
+  .order-time {
+    flex: 2;
+  }
+  
+  .order-progress {
+    flex: 1;
+  }
+  
+  /* Scrollable Orders Container */
+  .orders-container {
+    max-height: 400px; /* Adjust as needed */
+    overflow-y: auto;
+  }
+  
+  /* Order Item Styles */
+  .order-item:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  /* Progress Indicator */
+  .progress-status {
+    display: flex;
+    align-items: center;
+  }
+  
+  .progress-status .status-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .status-waiting {
+    background-color: red;
+  }
+  
+  .status-in-progress {
+    background-color: yellow;
+  }
+  
+  .status-done {
+    background-color: green;
+  }
+  
+  /* Filter Options */
+  .filter-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-options label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .filter-options input {
+    margin-right: 5px;
+  }
+  
+  .ordersmodal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .ordersmodal.hidden {
+    display: none;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .ordersmodal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+  }
+  
+  .close {
+    float: right;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .ordersmodal-content p {
+    margin: 10px 0;
+  }
+  
+  #productList {
+    margin-left: 20px;
+    list-style: none;
+  }
+  
+  #saveChanges {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .order-time {
+      flex: 1.5;
+    }
+  }
+  /* Order Management End */

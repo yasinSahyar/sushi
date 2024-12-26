@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> 
+
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="loginmodal.js" defer></script>
+    <script src="buffet.js" defer></script>
+    <script src="carousel.js" defer></script>
+  </head>
+
+  <body>
+    <header class="normal_nav">
+      <nav>
+        <ul class="nav_buttons">
+          <li><a id="lang_button" href="">En</a></li>
+        </ul>
+        <ul class="nav_links">
+          <li><a href="home">Home</a></li>
+        </ul>
+        <ul class="nav_links">
+          <li><a href="menu">Menu</a></li>
+        </ul>
+        <a href="home" class="logo_link">
+          <img class="logo" src="logo1.png" alt="logo" />
+        </a>
+        <ul class="nav_links">
+          <li><a href="contact">Contact</a></li>
+        </ul>
+        <ul class="nav_links">
+          <li><a href="about">About</a></li>
+        </ul>
+        <ul class="nav_buttons">
+          <li><i id="login_icon" class="fa-solid fa-user"></i></li>
+          <div id="dropdown_menu" class="dropdown-content">
+            <a href="profile" id="profile_option">Profile</a>
+            <a href="#" id="login_register_option">Login/Register</a>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Modal for login/register -->
+    <div id="login_modal" class="loginmodal">
+      <div class="loginmodal-content">
+        <div class="loginmodal-header">
+          <h2>Log In</h2>
+        </div>
+        <div class="loginmodal-body">
+          <form id="login_form" action="api/users/login" method="post">
+            <input
+              type="email"
+              id="loginemail"
+              placeholder="Email"
+              name="email"
+              required
+            />
+            <input
+              type="password"
+              id="loginpassword"
+              placeholder="Password"
+              name="password"
+              required
+            />
+            <button type="submit" id="login_button">Login</button>
+          </form>
+          <p id="loginerror_message" style="color: red; display: none">
+            Incorrect Email or Password
+          </p>
+          <a href="register">Register</a>
+        </div>
+      </div>
+    </div>
+    <header class="mobile_nav">
+      <mobileNav>
+        <img class="mobile_logo" src="logo1.png" alt="logo" />
+        <ul id="mobile_navlinks">
+          <li><a href="home">Home</a></li>
+          <li><a href="menu">Menu</a></li>
+          <li><a href="contact">Contact</a></li>
+          <li><a href="about">About</a></li>
+        </ul>
+        <div class="menu-icon">
+          <a id="lang_button" href="">En</a>
+          <i id="mobile_login_icon" class="fa-solid fa-user"></i>
+          <div id="mobile_dropdown_menu" class="dropdown-content">
+            <a href="profile" id="mobile_profile_option">Profile</a>
+            <a href="#" id="mobile_login_register_option">Login/Register</a>
+          </div>
+          <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+      </mobileNav>
+
+      <script>
+        let menuList = document.getElementById("mobile_navlinks");
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu() {
+          if (menuList.style.maxHeight === "0px") {
+            menuList.style.maxHeight = "300px";
+          } else {
+            menuList.style.maxHeight = "0px";
+          }
+        }
+      </script>
+      <script
+        src="https://kit.fontawesome.com/f8e1a90484.js"
+        crossorigin="anonymous"
+      ></script>
+    </header>
+
+    <header class="home_banner">
+      <img
+        src="home_banner.png"
+        alt="home banner image"
+        class="home_banner_img"
+      />
+    </header>
+
+    <main class="menu-carousel" id="buffetMenu">
+      <div class="carousel-card">
+        <button class="nav-button" id="prev-button">&#10094;</button>
+        <div class="carousel-wrapper" id="carousel_wrapper">
+
+          <div class="menu-day" id="monday">
+            <h2>Monday (Date)</h2>
+            <h3>Carbohydrates</h3>
+            <ul class="day-menu-list" id="monday_carbohydrate"></ul>
+            <h3>Main Courses</h3>
+            <ul class="day-menu-list" id="monday_maincourse"></ul>
+            <h3>Soups</h3>
+            <ul class="day-menu-list" id="monday_soup"></ul>
+          </div>
+
+          <div class="menu-day" id="tuesday">
+            <h2>Tuesday (Date)</h2>
+            <h3>Carbohydrates</h3>
+            <ul class="day-menu-list" id="tuesday_carbohydrate"></ul>
+            <h3>Main Courses</h3>
+            <ul class="day-menu-list" id="tuesday_maincourse"></ul>
+            <h3>Soups</h3>
+            <ul class="day-menu-list" id="tuesday_soup"></ul>
+          </div>
+
+          <div class="menu-day" id="wednesday">
+            <h2>Wednesday (Date)</h2>
+            <h3>Carbohydrates</h3>
+            <ul class="day-menu-list" id="wednesday_carbohydrate"></ul>
+            <h3>Main Courses</h3></ul>
+            <ul class="day-menu-list" id="wednesday_maincourse"></ul>
+            <h3>Soups</h3>
+            <ul class="day-menu-list" id="wednesday_soup"></ul>
+          </div>
+
+          <div class="menu-day" id="thursday">
+            <h2>Thursday (Date)</h2>
+            <h3>Carbohydrates</h3>
+            <ul class="day-menu-list" id="thursday_carbohydrate"></ul>
+            <h3>Main Courses</h3>
+            <ul class="day-menu-list" id="thursday_maincourse"></ul>
+            <h3>Soups</h3>
+            <ul class="day-menu-list" id="thursday_soup"></ul>
+          </div>
+
+          <div class="menu-day" id="friday">
+            <h2>Friday (Date)</h2>
+            <h3>Carbohydrates</h3>
+            <ul class="day-menu-list" id="friday_carbohydrate"></ul>
+            <h3>Main Courses</h3>
+            <ul class="day-menu-list" id="friday_maincourse"></ul>
+            <h3>Soups</h3>
+            <ul class="day-menu-list" id="friday_soup"></ul>
+          </div>
+
+          <div class="menu-day" id="saturday">
+            <h2>Saturday (Date)</h2>
+            <h3>Carbohydrates</h3>
+            <ul class="day-menu-list" id="saturday_carbohydrate"></ul>
+            <h3>Main Courses</h3>
+            <ul class="day-menu-list" id="saturday_maincourse"></ul>
+            <h3>Soups</h3>
+            <ul class="day-menu-list" id="saturday_soup"></ul>
+          </div>
+
+          <div class="menu-day" id="sunday">
+            <h2>Sunday (Date)</h2>
+            <h3>Carbohydrates</h3>
+            <ul class="day-menu-list" id="sunday_carbohydrate"></ul>
+            <h3>Main Courses</h3>
+            <ul class="day-menu-list" id="sunday_maincourse"></ul>
+            <h3>Soups</h3>
+            <ul class="day-menu-list" id="sunday_soup"></ul>
+          </div>
+        </div>
+        <button class="nav-button" id="next-button">&#10095;</button>
+      </div>
+    </main>
+
+    <header class="bottom_nav">
+      <nav>
+        <ul>
+          <li>
+            <img src="facebook.webp" alt="facebook icon" class="facebook" />
+          </li>
+          <li>
+            <img src="instagram.png" alt="instagram icon" class="instagram" />
+          </li>
+          <li>
+            <a
+              href="https://www.google.fi/maps/dir//Itis,+It%C3%A4katu+1-7,+00930+Helsinki/@60.2083,24.9194,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x46920f2bf0665295:0x836e4970c52d81ae!2m2!1d25.0805003!2d60.2107881!3e3?entry=ttu&g_ep=EgoyMDI0MTEwNS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              ><img
+                src="google-maps.png"
+                alt="google maps icon"
+                class="google_maps"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="https://reittiopas.hsl.fi/reitti/sy%C3%B6t%C3%A4%20l%C3%A4ht%C3%B6paikka/It%C3%A4keskus%2C%20Puotinharju%2C%20Helsinki%3A%3A60.209856%2C25.07329?arriveBy=false&locale=fi&time=1731072844.445"
+              target="_blank"
+              ><img src="hsl-icon.png" alt="hsl icon" class="hsl_icon"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="Style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=VT323"
+      rel="stylesheet"
+    />
+    <title>web-app</title>
+  </head>
+
+  <body class="work">
+    <form id="register" onsubmit="send()">
+      <div class="container">
+        <h1 class="center">Rekisteröidy</h1>
+        <label for="Sähköposti">Sähköposti:</label>
+        <input
+          type="email"
+          id="sposti"
+          name="sposti"
+          placeholder="Syötä Sähköposti"
+          required
+          minlength=""
+          maxlength="320"
+          onkeyup="clearThis()"
+        /><br />
+        <p id="InUseError" class="errorTxt2">Sähköposti on jo käytössä!</p>
+        <label for="salasana"
+          >Salasana (Vähintään 1 iso kirjain ja erikoismerkki. Kirjaimia
+          8-15):</label
+        >
+        <input
+          type="password"
+          id="salasana"
+          name="salasana"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          onkeyup="CheckPaswordMatch()"
+          placeholder="Syötä Salasana"
+          required
+          minlength="8"
+          maxlength="15"
+        /><br />
+        <label for="salasanaCheck">Kirjoita salasana uudelleen:</label>
+        <input
+          type="password"
+          id="salasanaCheck"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          onkeyup="CheckPaswordMatch()"
+          name="salasanaCheck"
+          placeholder="Syötä Salasana Uudelleen"
+          required
+          minlength="8"
+          maxlength="15"
+          oninput="check(this)"
+        />
+        <script language="javascript" type="text/javascript">
+          function check(input) {
+            if (input.value != document.getElementById("salasana").value) {
+              input.setCustomValidity("Password Must be Matching.");
+            } else {
+              // input is valid -- reset the error message
+              input.setCustomValidity("");
+            }
+          }
+        </script>
+        <p id="salasanaError" class="errorTxt">Salasanat eivät täsmää!</p>
+        <p style="text-align: center">
+          Löytyykö tunnukset? Kirjaudu sisään: <a href="/Login">Tästä!</a>
+        </p>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" id="registerButton">Rekisteröidy</button>
+      </div>
+    </form>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    const form = document.getElementById("register");
+    var InUseError = document.getElementById("InUseError");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+    });
+
+    function clearThis() {
+      InUseError.style.display = "none";
+    }
+
+    function CheckPaswordMatch() {
+      var salasanaReal = document.getElementById("salasana");
+      var salasanaCheck = document.getElementById("salasanaCheck");
+      var errorText = document.getElementById("salasanaError");
+
+      if (salasanaReal.value != salasanaCheck.value) {
+        errorText.style.display = "initial";
+      } else {
+        errorText.style.display = "none";
+      }
+    }
+
+    async function send() {
+      const user = {
+        sposti: document.getElementById("sposti").value,
+        salasana: document.getElementById("salasana").value,
+      };
+
+      customConfig = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const result = await axios
+        .post(
+          "http://localhost:3000/Register",
+          JSON.stringify(user),
+          customConfig
+        )
+        .then(function (response) {
+          if (response.data.redirect === "/Welcome") {
+            window.location = "/Welcome";
+          }
+          if (response.data.redirect === "EmailInUse") {
+            InUseError.style.display = "initial";
+          }
+        });
+    }
+  </script>
+</html>

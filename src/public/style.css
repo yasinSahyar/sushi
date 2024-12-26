@@ -1,0 +1,1024 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Header */
+#header {
+  margin-top: 7em;
+  text-align: center;
+  width: 100%;
+}
+
+/* Menu Page Start */
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 2% auto;
+  width: 80%;
+  height: 26em; /* Modify the height of the list */
+  overflow-y: auto;
+  border: 0.1% solid #ccc;
+  border-radius: 1%;
+  background-color: #d2ffce;
+  box-shadow: 0px 2px 11px 0px #0a2200;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  margin: 2% 0;
+  padding: 2%;
+  border-bottom: 0.1% solid #ddd;
+}
+
+.product-image {
+  width: 15%;
+  height: auto;
+  margin-right: 5%;
+  border-radius: 1%;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.product-description {
+  margin: 1% 0;
+}
+
+.product-allergens {
+  color: #ff0000;
+  font-style: italic;
+}
+
+.product-price {
+  font-weight: bold;
+}
+
+/* Menu Page End */
+
+/* About Page Start */
+#header h1 {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 2%;
+}
+
+#sub-header {
+  width: 80%;
+  margin: 3% auto 1% auto;
+}
+
+#sub-header h2 {
+  font-size: 1.2em;
+  color: #333;
+  text-align: left;
+  margin-left: 0;
+}
+
+#about-text-section {
+  width: 80%;
+  margin: 3% auto;
+  font-size: 1em;
+  line-height: 1.5em;
+  text-align: justify;
+  color: #444;
+}
+
+#about-text-section p {
+  padding: 1%;
+}
+
+#image-section {
+  margin-top: 2%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 3% auto;
+  margin-bottom: 10%;
+}
+
+#image-section img {
+  width: 50%;
+  border-radius: 1%;
+}
+
+/* About Page End */
+
+/* Contact Page Start */
+
+#contact-container {
+  display: flex;
+  width: 90%;
+  margin: 3% auto;
+  justify-content: space-between;
+  padding-bottom: 10em;
+}
+
+#contact-text {
+  width: 45%;
+}
+
+#contact-text h2 {
+  font-size: 1.2em;
+  margin-bottom: 1%;
+}
+
+#contact-text p {
+  font-size: 1em;
+  color: #444;
+  line-height: 1.5em;
+}
+
+#contact-map {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f0f0f0;
+  color: #666;
+  height: 500px;
+  border-radius: 1%;
+  text-align: center;
+}
+
+/* Navbar   start: */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 11px 0px #0a2200;
+  padding: 30px 20px;
+  height: 4em;
+  background-color: #0a2200;
+  z-index: 3;
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0px 0px 3px 8px #0a2200;
+  height: 9em;
+  margin-left: 0.5em;
+}
+
+.logo_link {
+  background: none;
+  padding-top: 6em;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links a {
+  background-color: #d2ffce;
+  padding: 0.4em;
+  border-radius: 20%;
+  font-size: 1.25em;
+  color: #0a2200;
+  text-decoration: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0;
+  background-color: #0a2200;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  color: #ff7f7f;
+}
+
+.nav_buttons {
+  background: none;
+}
+
+.nav_buttons li {
+  display: inline-block;
+  padding: 0 20px;
+  background-color: #0a2200;
+}
+
+#lang_button {
+  background-color: #ff9494;
+  color: #0a2200;
+  padding: 0.5em;
+  font-size: 1em;
+  border-radius: 20%;
+}
+
+#lang_button:hover {
+  color: #d2ffce;
+}
+
+#login_icon {
+  color: #0a2200;
+  background-color: #ff9494;
+  padding: 0.5em;
+  font-size: 1em;
+  border-radius: 20%;
+  z-index: 10;
+}
+
+#login_icon:hover {
+  color: #d2ffce;
+  transition: all 0.3s ease 0s;
+}
+
+#mobile_login_icon {
+  color: #0a2200;
+  background-color: #ff9494;
+  padding: 0.5em;
+  font-size: 1em;
+  border-radius: 20%;
+  z-index: 10;
+}
+
+#mobile_login_icon:hover {
+  color: #d2ffce;
+  transition: all 0.3s ease 0s;
+}
+
+.nav_buttons li a {
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.mobile_nav {
+  display: none;
+}
+
+/* Login_icon menu & Login Modal Start */
+#dropdown_menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  top: 9.2%;
+  right: 0;
+  min-width: 160px;
+}
+
+#dropdown_menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+#dropdown_menu a:hover {
+  background-color: #ddd;
+}
+
+#mobile_dropdown_menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  top: 100%;
+  right: 0;
+  min-width: 160px;
+}
+
+#mobile_dropdown_menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+#mobile_dropdown_menu a:hover {
+  background-color: #ddd;
+}
+
+/* Modal Styles */
+.loginmodal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.loginmodal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  z-index: 9;
+}
+
+.loginmodal-header {
+  text-align: center;
+}
+
+.loginmodal-body input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.loginmodal-body button {
+  padding: 10px 20px;
+  background-color: #0a2200;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.loginmodal-body button:hover {
+  background-color: #ff9494;
+}
+
+/* Login_icon menu & Login Modal End */
+/* Navbar  end: */
+
+/* Mobile_nav Start: */
+
+.mobile_logo {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 20%;
+  box-shadow: 0px 0px 7px 4px #0a2200;
+  height: 4em;
+}
+
+mobileNav ul {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+mobileNav ul li {
+  list-style-type: none;
+}
+
+mobileNav ul li a {
+  text-decoration: none;
+  color: #0a2200;
+}
+
+.menu-icon {
+  display: none;
+  background-color: #0a2200;
+}
+
+.menu-icon i {
+  color: #d2ffce;
+  background-color: #0a2200;
+  font-size: 30px;
+}
+
+@media (max-width: 900px) {
+  .normal_nav {
+    display: none;
+    background: none;
+  }
+
+  .mobile_nav {
+    display: block;
+    box-shadow: 0px 2px 11px 0px #0a2200;
+  }
+
+  mobileNav {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0a2200;
+    position: relative;
+    height: 80px;
+  }
+
+  mobileNav a:hover {
+    background-color: #bae2b6;
+    transition: all 0.3s ease 0s;
+    color: #ff7f7f;
+  }
+
+  mobileNav a {
+    background-color: #d2ffce;
+    border-bottom: 2px #0a2200 solid;
+    padding-left: 50%;
+    padding-right: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+  }
+
+  mobileNav ul {
+    height: 196px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  mobileNav li {
+    height: 10em;
+    width: 100%;
+  }
+
+  mobileNav ul li {
+    padding-top: 0;
+  }
+  .menu-icon {
+    display: block;
+  }
+  #mobile_navlinks {
+    transition: all 0.5s;
+  }
+}
+/* Mobile_nav End: */
+
+/* Map Start: */
+
+/* Map End: */
+
+/* Profile Page Start */
+/* Form Container */
+#profile-form {
+  max-width: 90%; /* Adjusts to screen size */
+  margin: 0 auto;
+  padding: 5%;
+  background-color: #f9f9f9;
+  border-radius: 1em;
+  box-shadow: 0 2% 4% rgba(0, 0, 0, 0.1);
+}
+
+/* Stack items with spacing */
+.form-group {
+  margin-bottom: 2em;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.8em;
+  font-size: 1em;
+  border: 0.1em solid #ccc;
+  border-radius: 0.5em;
+  outline: none;
+}
+
+/* Input focus effect */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+  border-color: #4caf50;
+}
+
+/* Save Button */
+button[type="submit"] {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.1em;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 2em; /* Pill shape */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Profile Page End */
+
+/* Index Page Start */
+
+/* Carousel Wrapper (Center the carousel in the middle of the screen) */
+.menu-carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 6em); /* Adjust height to account for navbar */
+  padding: 20px;
+}
+
+.day-menu-list {
+  list-style: none;
+}
+
+/* Spacing*/
+.menu-carousel {
+  margin-top: 10px; /* Adjust the value for desired spacing */
+  margin-bottom: 100px;
+}
+
+/* Carousel Card */
+.carousel-card {
+  margin: 0 auto; /* Ensures it centers in the wrapper */
+  width: 58%;
+  max-width: 1200px;
+  background-color: #f4f4f4;
+  box-shadow: 0px 2px 11px 0px #0a2200;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+}
+
+/* Carousel Wrapper (Holds all the days of the menu) */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  transition: transform 0.1s ease-in-out; /* This enables the sliding transition */
+}
+
+.carousel-wrapper h3 {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Style the day-menu items */
+.day-menu-list li {
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Bold product names */
+.day-menu-list li strong {
+  font-weight: bold;
+  color: black;
+}
+
+/* Product descriptions */
+.day-menu-list li p {
+  margin: 5px 0;
+  color: black;
+}
+
+/* Allergen info */
+.day-menu-list li p strong {
+  color: #d32f2f;
+}
+
+/* Menu Day (each individual day's content) */
+.menu-day {
+  flex: 0 0 100%; /* Each day will take up 100% of the carousel width */
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  opacity: 1; /* Initially hidden */
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Active class to display the current day's menu */
+.menu-day.active {
+  opacity: 1; /* Make the active day visible */
+}
+
+/* Navigation Buttons */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #d2ffce; /* Button background color */
+  color: black;
+  font-size: 2rem;
+  border: none;
+  padding: 1.5rem;
+  cursor: pointer;
+  z-index: 1;
+  height: 100%;
+}
+
+/* Previous Button */
+#prev-button {
+  left: 0px; /* Position the previous button */
+  padding: 1.5rem;
+}
+
+/* Next Button */
+#next-button {
+  right: 0px; /* Position the next button */
+  padding: 1.5rem;
+}
+
+/* Hover Effect for Navigation Buttons */
+.nav-button:hover {
+  transition: 0.3s;
+  background-color: orange; /* Darken the button when hovered */
+}
+
+.home_banner {
+  margin-bottom: 1em;
+  margin-top: 0em;
+  height: 18em;
+  width: 100%;
+  /*background: IMAGE*/
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.home_banner_img {
+  position: relative;
+  z-index: -1; /* Bring content above overlay */
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  /* Adjust the font size for smaller screens */
+  .carousel-card {
+    width: 100%; /* Make carousel take full width on mobile */
+    padding: 10px;
+  }
+
+  .nav-button {
+    font-size: 1.5rem;
+    padding: 0.3rem;
+  }
+
+  .menu-day {
+    padding: 15px;
+  }
+
+  .hero-banner {
+    margin-bottom: 5vh;
+    margin-top: 3vh;
+    margin-left: 8%;
+    height: 30vh;
+    width: 85%;
+    /*background: IMAGE*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1; /* Bring content above overlay */
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* Index Page End */
+
+/* Bottom_nav start: */
+.bottom_nav nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 3em;
+  z-index: 2;
+}
+
+.bottom_nav ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.bottom_nav ul li {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.facebook {
+  width: 2em;
+  border-radius: 20%;
+  box-shadow: 0px 0px 12px 2px rgb(0 0 0);
+  transition: all 0.3s;
+}
+
+.facebook:hover {
+  width: 2.75em;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.instagram {
+  width: 2em;
+  box-shadow: 0px 0px 12px 2px rgb(0 0 0);
+  border-radius: 20%;
+  transition: all 0.3s;
+}
+
+.instagram:hover {
+  width: 2.75em;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.google_maps {
+  width: 2.25em;
+  transition: all 0.3s;
+}
+
+.google_maps:hover {
+  width: 3em;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.hsl_icon {
+  width: 2em;
+  border-radius: 20%;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 12px 2px rgb(0 0 0);
+}
+
+.hsl_icon:hover {
+  width: 2.75em;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+/* Bottom_nav end: */
+
+/* Employee contacts Start */
+.employee_contacts {
+  padding: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.employee_contacts h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact_list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact_list li {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.contact_list li strong {
+  color: #333;
+}
+
+.contact_list li:last-child {
+  border-bottom: none;
+}
+/* Employee contacts End */
+
+/* Management Start */
+.orders {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#searchBar {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Orders List */
+.orders-list {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.orders-header,
+.order-item {
+  display: flex;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.orders-header {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.ordercolumn {
+  flex: 1;
+  text-align: left;
+}
+
+.order-number {
+  flex: 1;
+}
+
+.order-time {
+  flex: 2;
+}
+
+.order-progress {
+  flex: 1;
+}
+
+/* Scrollable Orders Container */
+.orders-container {
+  max-height: 400px; /* Adjust as needed */
+  overflow-y: auto;
+}
+
+/* Order Item Styles */
+.order-item:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Progress Indicator */
+.progress-status {
+  display: flex;
+  align-items: center;
+}
+
+.progress-status .status-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-waiting {
+  background-color: red;
+}
+
+.status-in-progress {
+  background-color: yellow;
+}
+
+.status-done {
+  background-color: green;
+}
+
+/* Filter Options */
+.filter-options {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filter-options label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.filter-options input {
+  margin-right: 5px;
+}
+
+.ordersmodal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.ordersmodal.hidden {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.ordersmodal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.close {
+  float: right;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.ordersmodal-content p {
+  margin: 10px 0;
+}
+
+#productList {
+  margin-left: 20px;
+  list-style: none;
+}
+
+#saveChanges {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .order-time {
+    flex: 1.5;
+  }
+}
+/* Order Management End */
+
+#addProductForm button[type="submit"] {
+  padding: 15px 25px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 15px auto;
+}
+
+#addProductForm button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+#product-select {
+  visibility: visible;
+  display: block;
+  opacity: 1;
+}
+
+/* Management End */

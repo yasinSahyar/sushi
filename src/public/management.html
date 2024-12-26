@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Management</title>
+    <link rel="stylesheet" href="management.css" />
+    <script src="management.js" defer></script>
+  </head>
+  <body>
+    <button id="openAddProductModal" data-modal-target="#addProductModal">
+      Add Product
+    </button>
+    <button
+      id="openNextWeekBuffetModal"
+      data-modal-target="#nextWeekBuffetModal"
+    >
+      Next Week's Buffet
+    </button>
+    <button id="openDeleteProductModal" data-modal-target="#deleteProductModal">
+      Delete a Product
+    </button>
+
+    <!-- Add Product Modal -->
+    <div id="addProductModal" class="managementmodal">
+      <div class="managementmodal-content">
+        <span class="managementclose">&times;</span>
+        <h2>Add a Product</h2>
+        <form id="addProductForm" enctype="multipart/form-data" method="post">
+          <div class="form-row">
+            <label for="productName">Name of Product</label>
+            <input type="text" id="productName" />
+          </div>
+          <div class="form-row">
+            <label for="productDescription">Description</label>
+            <input type="text" id="productDescription" />
+          </div>
+          <div class="form-row">
+            <label for="productAllergens">Allergens</label>
+            <input type="text" id="productAllergens" />
+          </div>
+          <div class="form-row">
+            <label for="buffetOrMenu">Buffet or Menu?</label>
+            <select id="buffetOrMenu">
+              <option value="Buffet">Buffet</option>
+              <option value="Menu">Menu</option>
+            </select>
+          </div>
+          <div id="buffetFields" class="conditional-fields">
+            <div class="form-row">
+              <label for="buffetType">Type</label>
+              <select id="buffetType">
+                <option value="maincourse">Main Course</option>
+                <option value="carbohydrate">Carbohydrate</option>
+                <option value="soup">Soup</option>
+              </select>
+            </div>
+          </div>
+          <div id="menuFields" class="conditional-fields">
+            <div class="form-row">
+              <label for="menuCategory">Category</label>
+              <select id="menuCategory">
+                <option value="maincourse">Main Course</option>
+                <option value="drink">Drink</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="menuPrice">Price</label>
+              <input type="number" id="menuPrice" />
+            </div>
+            <div class="form-row">
+              <label for="menuImage">Image of Product</label>
+              <input type="file" id="menuImage" name="file" />
+            </div>
+          </div>
+          <button type="submit">Add Product</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Next Week's Buffet Modal -->
+    <div id="nextWeekBuffetModal" class="managementmodal">
+      <div class="managementmodal-content" id="managementmodal-content">
+        <span class="managementclose">&times;</span>
+        <h2>Choose Next Week's Buffet</h2>
+        <form id="nextWeekBuffetForm" method="post">
+          <div class="form-row">
+            <label for="product-select">Product</label>
+            <select id="product-select"></select>
+          </div>
+          <div class="form-row">
+            <label for="description">Description</label>
+            <input type="text" id="description" readonly />
+          </div>
+          <div class="form-row">
+            <label for="allergen">Allergens</label>
+            <input type="text" id="allergens" readonly />
+          </div>
+          <div class="form-row">
+            <label for="type">Type</label>
+            <input type="text" id="type" readonly />
+          </div>
+          <div class="form-row">
+            <label for="weekday-select">Weekday</label>
+            <select id="weekday-select">
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+              <option value="sunday">Sunday</option>
+            </select>
+          </div>
+          <button id="buffetsubmit">submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Delete Product Modal -->
+    <div id="deleteProductModal" class="managementmodal">
+      <div class="managementmodal-content" id="managementmodal-content">
+        <span class="managementclose">&times;</span>
+        <h2>Delete a Product</h2>
+        <form id="deleteProductForm" method="post">
+
+        </form>
+      </div>
+    </div>
+
+    <div class="orders">
+      <h1>Orders</h1>
+
+      <!-- Search Bar -->
+      <input
+        type="text"
+        id="searchBar"
+        placeholder="Search by Order Number..."
+      />
+
+      <!-- Filters -->
+      <div class="filter-options">
+        <label>
+          <input type="checkbox" id="filterWaiting" class="filter-checkbox" />
+          Waiting
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            id="filterInProgress"
+            class="filter-checkbox"
+          />
+          In Progress
+        </label>
+        <label>
+          <input type="checkbox" id="filterDone" class="filter-checkbox" />
+          Done
+        </label>
+      </div>
+
+      <!-- Orders List -->
+      <div class="orders-list">
+        <div class="orders-header">
+          <div class="ordercolumn order-number">Order Number</div>
+          <div class="ordercolumn order-time">Order Time</div>
+          <div class="ordercolumn order-progress">Progress</div>
+        </div>
+        <div id="ordersContainer" class="orders-container">
+          <!-- Orders will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="orderDetailsModal" class="ordersmodal hidden">
+      <div class="ordersmodal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2>Order Details</h2>
+        <p>
+          <strong>Order Number:</strong> <span id="modalOrderNumber"></span>
+        </p>
+        <p><strong>Date and Time:</strong> <span id="modalOrderTime"></span></p>
+        <p>
+          <strong>Status:</strong>
+          <select id="modalOrderStatus">
+            <option value="Waiting">Waiting</option>
+            <option value="In progress">In Progress</option>
+            <option value="Done">Done</option>
+          </select>
+        </p>
+        <div id="modalOrderProducts">
+          <p><strong>Products:</strong></p>
+          <ul id="productList"></ul>
+          <p><strong>Total Price:</strong> $<span id="totalPrice"></span></p>
+        </div>
+        <button id="saveChanges">Save Changes</button>
+      </div>
+    </div>
+
+    <section class="employee_contacts">
+      <h1>Our Team</h1>
+      <ul class="contact_list">
+        <li>Loading employee contacts...</li>
+      </ul>
+    </section>
+  </body>
+</html>
